@@ -21,7 +21,6 @@ public class ProjestBot extends TelegramLongPollingBot {
     ResourceBundle res;
     @Override
     public void onUpdateReceived(Update update) {
-        message = update.getMessage();
         if (update.hasMessage() && update.getMessage().hasText()) {
             if (message.getText().equals("/start")) {
                 smessage.setChatId(message.getChatId());
