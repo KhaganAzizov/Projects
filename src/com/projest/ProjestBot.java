@@ -27,6 +27,7 @@ public class ProjestBot extends TelegramLongPollingBot {
         message = update.getMessage();
         if (update.hasMessage() && update.getMessage().hasText()) {
             if (message.getText().equals("/start")) {
+                resetasking();
                 smessage.setChatId(message.getChatId());
                 smessage.setText("Choose language:");
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
@@ -51,17 +52,31 @@ public class ProjestBot extends TelegramLongPollingBot {
             }
             else if(startedquestions&&questnum<=5){
                 switch (questnum){
-                    case 1->prjct_name=message.getText();
-                    case 2->prjct_desc=message.getText();
-                    case 3->prjct_paidornot=message.getText();
-                    case 4->prjct_mail=message.getText();
-                    case 5->prjct_contact=message.getText();
+                    case 1->prjct_name=res.getString("prjct_name")+message.getText();
+                    case 2->prjct_desc=res.getString("prjct_desc")+message.getText();
+                    case 3->prjct_paidornot=res.getString("prjct_paidornot")+message.getText();
+                    case 4->prjct_mail=res.getString("prjct_mail")+message.getText();
+                    case 5->prjct_contact=res.getString("prjct_contact")+message.getText();
                 }
                 questnum++;
                 ask_quest(questnum);
             }
+            if(questnum==6){
+                String prjct_msg=prjct_name+"\n"+prjct_desc+"\n"+prjct_paidornot+"\n"+prjct_mail+"\n"+prjct_contact;
+                smessage.setChatId(message.getChatId());
+                smessage.setText(prjct_msg);
+                try{
+                    execute(smessage);
+                }catch (TelegramApiException e){
+                    e.printStackTrace();
+                }
+                finally {
+                    resetasking();
+                }
+            }
         }
         else if(update.hasCallbackQuery()){
+            resetasking();
             String call_data = update.getCallbackQuery().getData();
             switch (call_data) {
                 case "lng_az" -> Locale.setDefault(new Locale("az", "AZ"));
