@@ -21,10 +21,11 @@ public class ProjestBot extends TelegramLongPollingBot {
     ResourceBundle res;
     @Override
     public void onUpdateReceived(Update update) {
+        message = update.getMessage();
         if (update.hasMessage() && update.getMessage().hasText()) {
             if (message.getText().equals("/start")) {
                 smessage.setChatId(message.getChatId());
-                smessage.setText("Choose language:");
+                smessage.setText("ad");
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
