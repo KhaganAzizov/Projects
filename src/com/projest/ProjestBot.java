@@ -25,7 +25,7 @@ public class ProjestBot extends TelegramLongPollingBot {
         if (update.hasMessage() && update.getMessage().hasText()) {
             if (message.getText().equals("/start")) {
                 smessage.setChatId(message.getChatId());
-                smessage.setText("Choose language");
+                smessage.setText("Choose language:");
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
