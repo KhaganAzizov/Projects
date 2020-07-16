@@ -26,7 +26,7 @@
                     <programs>
                         <program>
                             <mainClass>Main</mainClass>
-                            <name>mainclas</name>
+                            <name>worker</name>
                         </program>
                     </programs>
                 </configuration>
