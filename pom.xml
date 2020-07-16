@@ -20,5 +20,11 @@
         </plugins>
     </build>
 
-
+<dependencies>
+    <dependency>
+        <groupId>org.telegram</groupId>
+        <artifactId>telegrambots</artifactId>
+        <version>4.9</version>
+    </dependency>
+</dependencies>
 </project>
