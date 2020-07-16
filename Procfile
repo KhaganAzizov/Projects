@@ -1,1 +1,1 @@
-$ heroku ps:scale console=1
+ps:scale console=1
