@@ -1,1 +1,1 @@
-ps:scale console=1
+worker: sh target/bin/mainclas
