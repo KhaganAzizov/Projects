@@ -1,1 +1,1 @@
-worker: sh target/bin/mainclas
+worker: sh target/bin/worker
