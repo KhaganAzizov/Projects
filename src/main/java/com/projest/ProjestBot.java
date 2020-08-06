@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 import static java.lang.StrictMath.toIntExact;
 
 public class ProjestBot extends TelegramLongPollingBot {
-    private final String BotToken="1228529018:AAFFONumcNaubKfghVoBM4FEZEE0azN3zyQ";
+    private final String BotToken="";
     private final String BotUsername="projest_bot";
     String prjct_name,prjct_desc,prjct_req,prjct_paidornot,prjct_mail,prjct_contact;
     boolean startedquestions=false;
